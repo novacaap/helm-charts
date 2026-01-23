@@ -5,6 +5,7 @@ This repository contains Helm charts for deploying applications to Kubernetes. H
 ## What is Helm?
 
 Helm is the package manager for Kubernetes. It helps you:
+
 - **Package applications**: Bundle Kubernetes resources into reusable charts
 - **Manage dependencies**: Handle complex application dependencies
 - **Version management**: Track and manage different versions of your applications
@@ -29,21 +30,25 @@ Before using Helm, ensure you have:
 ### Installing Helm
 
 #### macOS
+
 ```bash
 brew install helm
 ```
 
 #### Linux
+
 ```bash
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 
 #### Windows
+
 ```powershell
 choco install kubernetes-helm
 ```
 
 #### Verify Installation
+
 ```bash
 helm version
 ```
@@ -53,14 +58,14 @@ helm version
 ### Add This Repository
 
 ```bash
-helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+helm repo add novacaap https://novacaap.github.io/helm-chart
 helm repo update
 ```
 
 ### List Available Charts
 
 ```bash
-helm search repo kalpeshbpatel
+helm search repo novacaap
 ```
 
 ## Available Charts
@@ -76,30 +81,37 @@ For detailed documentation on each chart, see their respective README files in t
 ### Repository Commands
 
 #### Add a Repository
+
 ```bash
 helm repo add <repo-name> <repo-url>
 ```
+
 Example:
+
 ```bash
-helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+helm repo add novacaap https://novacaap.github.io/helm-chart
 ```
 
 #### List Repositories
+
 ```bash
 helm repo list
 ```
 
 #### Update Repository Index
+
 ```bash
 helm repo update
 ```
 
 #### Remove a Repository
+
 ```bash
 helm repo remove <repo-name>
 ```
 
 #### Search Charts
+
 ```bash
 # Search in all repositories
 helm search repo <keyword>
@@ -111,20 +123,25 @@ helm search repo <repo-name>/<chart-name>
 ### Installation Commands
 
 #### Install a Chart
+
 ```bash
 helm install <release-name> <repo-name>/<chart-name>
 ```
+
 Example:
+
 ```bash
-helm install my-app kalpeshbpatel/acute
+helm install my-app novacaap/acute
 ```
 
 #### Install with Custom Values
+
 ```bash
 helm install <release-name> <repo-name>/<chart-name> -f values.yaml
 ```
 
 #### Install with Inline Values
+
 ```bash
 helm install <release-name> <repo-name>/<chart-name> \
   --set key1=value1 \
@@ -132,11 +149,13 @@ helm install <release-name> <repo-name>/<chart-name> \
 ```
 
 #### Install to Specific Namespace
+
 ```bash
 helm install <release-name> <repo-name>/<chart-name> -n <namespace> --create-namespace
 ```
 
 #### Install with Dry Run (Preview)
+
 ```bash
 helm install <release-name> <repo-name>/<chart-name> --dry-run --debug
 ```
@@ -144,21 +163,25 @@ helm install <release-name> <repo-name>/<chart-name> --dry-run --debug
 ### Upgrade Commands
 
 #### Upgrade a Release
+
 ```bash
 helm upgrade <release-name> <repo-name>/<chart-name>
 ```
 
 #### Upgrade with Values File
+
 ```bash
 helm upgrade <release-name> <repo-name>/<chart-name> -f values.yaml
 ```
 
 #### Upgrade with Rollback on Failure
+
 ```bash
 helm upgrade <release-name> <repo-name>/<chart-name> --atomic
 ```
 
 #### Upgrade with Timeout
+
 ```bash
 helm upgrade <release-name> <repo-name>/<chart-name> --timeout 5m
 ```
@@ -166,26 +189,31 @@ helm upgrade <release-name> <repo-name>/<chart-name> --timeout 5m
 ### List and Status Commands
 
 #### List All Releases
+
 ```bash
 helm list
 ```
 
 #### List Releases in Namespace
+
 ```bash
 helm list -n <namespace>
 ```
 
 #### List All Releases (Including Deleted)
+
 ```bash
 helm list --all
 ```
 
 #### Show Release Status
+
 ```bash
 helm status <release-name>
 ```
 
 #### Show Release History
+
 ```bash
 helm history <release-name>
 ```
@@ -193,11 +221,13 @@ helm history <release-name>
 ### Uninstall Commands
 
 #### Uninstall a Release
+
 ```bash
 helm uninstall <release-name>
 ```
 
 #### Uninstall with Keep History
+
 ```bash
 helm uninstall <release-name> --keep-history
 ```
@@ -205,11 +235,13 @@ helm uninstall <release-name> --keep-history
 ### Rollback Commands
 
 #### Rollback to Previous Version
+
 ```bash
 helm rollback <release-name>
 ```
 
 #### Rollback to Specific Revision
+
 ```bash
 helm rollback <release-name> <revision-number>
 ```
@@ -217,31 +249,37 @@ helm rollback <release-name> <revision-number>
 ### Template and Debug Commands
 
 #### Render Templates Locally
+
 ```bash
 helm template <release-name> <repo-name>/<chart-name>
 ```
 
 #### Render with Values
+
 ```bash
 helm template <release-name> <repo-name>/<chart-name> -f values.yaml
 ```
 
 #### Validate Chart
+
 ```bash
 helm lint <chart-path>
 ```
 
 #### Show Chart Values
+
 ```bash
 helm show values <repo-name>/<chart-name>
 ```
 
 #### Show Chart Information
+
 ```bash
 helm show chart <repo-name>/<chart-name>
 ```
 
 #### Show All Chart Information
+
 ```bash
 helm show all <repo-name>/<chart-name>
 ```
@@ -249,16 +287,19 @@ helm show all <repo-name>/<chart-name>
 ### Package Commands
 
 #### Package a Chart
+
 ```bash
 helm package <chart-path>
 ```
 
 #### Package with Version
+
 ```bash
 helm package <chart-path> --version 1.0.0
 ```
 
 #### Create Index File
+
 ```bash
 helm repo index <directory>
 ```
@@ -268,41 +309,48 @@ helm repo index <directory>
 ### Basic Deployment Workflow
 
 1. **Add the repository**
+
    ```bash
-   helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+   helm repo add novacaap https://novacaap.github.io/helm-chart
    helm repo update
    ```
 
 2. **Search for charts**
+
    ```bash
-   helm search repo kalpeshbpatel
+   helm search repo novacaap
    ```
 
 3. **View chart values**
+
    ```bash
-   helm show values kalpeshbpatel/acute
+   helm show values novacaap/acute
    ```
 
 4. **Create custom values file**
+
    ```bash
-   helm show values kalpeshbpatel/acute > my-values.yaml
+   helm show values novacaap/acute > my-values.yaml
    # Edit my-values.yaml with your configuration
    ```
 
 5. **Install the chart**
+
    ```bash
-   helm install my-release kalpeshbpatel/acute -f my-values.yaml
+   helm install my-release novacaap/acute -f my-values.yaml
    ```
 
 6. **Check status**
+
    ```bash
    helm status my-release
    kubectl get pods
    ```
 
 7. **Upgrade when needed**
+
    ```bash
-   helm upgrade my-release kalpeshbpatel/acute -f my-values.yaml
+   helm upgrade my-release novacaap/acute -f my-values.yaml
    ```
 
 8. **Rollback if needed**
@@ -313,23 +361,27 @@ helm repo index <directory>
 ### Development Workflow
 
 1. **Clone and modify chart locally**
+
    ```bash
-   git clone https://github.com/kalpeshbpatel/helm-chart.git
+   git clone https://github.com/novacaap/helm-charts.git
    cd helm-chart/acute
    # Make your changes
    ```
 
 2. **Lint the chart**
+
    ```bash
    helm lint .
    ```
 
 3. **Test with dry-run**
+
    ```bash
    helm install test-release . --dry-run --debug
    ```
 
 4. **Package the chart**
+
    ```bash
    helm package .
    ```
@@ -369,41 +421,49 @@ Values files allow you to customize chart deployments. You can:
 ## Troubleshooting
 
 ### Check Release Status
+
 ```bash
 helm status <release-name>
 ```
 
 ### View Release Manifest
+
 ```bash
 helm get manifest <release-name>
 ```
 
 ### View Release Values
+
 ```bash
 helm get values <release-name>
 ```
 
 ### View All Release Information
+
 ```bash
 helm get all <release-name>
 ```
 
 ### Debug Template Rendering
+
 ```bash
 helm template <release-name> <chart> --debug
 ```
 
 ### Check Kubernetes Resources
+
 ```bash
 kubectl get all -l app.kubernetes.io/instance=<release-name>
 ```
 
 ### View Pod Logs
+
 ```bash
 kubectl logs -l app.kubernetes.io/instance=<release-name>
 ```
 
 ### Describe Resources
+
 ```bash
 kubectl describe pod -l app.kubernetes.io/instance=<release-name>
 ```
@@ -425,9 +485,9 @@ kubectl describe pod -l app.kubernetes.io/instance=<release-name>
 
 ## Repository Information
 
-- **Repository URL**: [https://github.com/kalpeshbpatel/helm-chart](https://github.com/kalpeshbpatel/helm-chart)
-- **Helm Repository**: `https://kalpeshbpatel.github.io/helm-chart`
-- **Issues**: [https://github.com/kalpeshbpatel/helm-chart/issues](https://github.com/kalpeshbpatel/helm-chart/issues)
+- **Repository URL**: [https://github.com/novacaap/helm-charts](https://github.com/novacaap/helm-charts)
+- **Helm Repository**: `https://novacaap.github.io/helm-chart`
+- **Issues**: [https://github.com/novacaap/helm-charts/issues](https://github.com/novacaap/helm-charts/issues)
 
 ## Contributing
 

@@ -3,12 +3,12 @@
 ```
 helm package acute
 mv acute-* docs
-helm repo index docs --url https://kalpeshbpatel.github.io/helm-chart
+helm repo index docs --url https://novacaap.github.io/helm-charts/
 ```
 
 # Add Helm Repo
 
 ```
-helm repo add acute https://kalpeshbpatel.github.io/helm-chart/
+helm repo add acute https://novacaap.github.io/helm-charts/
 helm search repo acute
 ```

@@ -3,12 +3,12 @@ entries:
   acute:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-01-23T14:20:04.841237+05:30"
+    created: "2026-01-23T20:40:07.710593+05:30"
     description: A Helm chart for Kubernetes
-    digest: 43f6a3b852f6478a7089baaa4a47197270e203915d6894f60c3031d7eb920b74
+    digest: 13ca258342651471c97a2cd0e7f6574ce49bed4df05349dce658e5e695eac9d8
     name: acute
     type: application
     urls:
-    - https://kalpeshbpatel.github.io/helm-chart/acute-1.0.0.tgz
+    - https://novacaap.github.io/helm-charts/acute-1.0.0.tgz
     version: 1.0.0
-generated: "2026-01-23T14:20:04.839749+05:30"
+generated: "2026-01-23T20:40:07.708623+05:30"

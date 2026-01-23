@@ -4,12 +4,12 @@
 version: 1.0.0
 name: acute
 displayName: Acute Helm Chart
-createdAt: "2026-01-23T00:00:00Z"
+createdAt: '2026-01-23T00:00:00Z'
 description: A flexible and comprehensive Helm chart for deploying applications on Kubernetes. Supports multiple workload types including Deployments, StatefulSets, Jobs, and CronJobs with extensive configuration options for production-ready deployments.
 category: integration-delivery
-appVersion: "1.0.0"
+appVersion: '1.0.0'
 license: Apache-2.0
-homeURL: https://github.com/kalpeshbpatel/helm-chart
+homeURL: https://github.com/novacaap/helm-charts
 containersImages:
   - name: nginx
     image: nginx:1.25-alpine
@@ -42,11 +42,11 @@ maintainers:
 
 links:
   - name: GitHub Repository
-    url: https://github.com/kalpeshbpatel/helm-chart
+    url: https://github.com/novacaap/helm-charts
   - name: Chart Documentation
-    url: https://github.com/kalpeshbpatel/helm-chart/tree/main/acute
+    url: https://github.com/novacaap/helm-charts/tree/main/acute
   - name: Issues
-    url: https://github.com/kalpeshbpatel/helm-chart/issues
+    url: https://github.com/novacaap/helm-charts/issues
 
 readme: |
   # Acute Helm Chart
@@ -65,12 +65,12 @@ readme: |
   ## Quick Start
 
   ```bash
-  helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+  helm repo add novacaap https://novacaap.github.io/helm-chart
   helm repo update
-  helm install my-release kalpeshbpatel/acute
+  helm install my-release novacaap/acute
   ```
 
-  For detailed documentation, see the [chart README](https://github.com/kalpeshbpatel/helm-chart/tree/main/acute).
+  For detailed documentation, see the [chart README](https://github.com/novacaap/helm-charts/tree/main/acute).
 
 install: |
   ## Installation
@@ -78,20 +78,20 @@ install: |
   ### Add the Helm repository
 
   ```bash
-  helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+  helm repo add novacaap https://novacaap.github.io/helm-chart
   helm repo update
   ```
 
   ### Install the chart
 
   ```bash
-  helm install <release-name> kalpeshbpatel/acute
+  helm install <release-name> novacaap/acute
   ```
 
   ### Install with custom values
 
   ```bash
-  helm install <release-name> kalpeshbpatel/acute -f my-values.yaml
+  helm install <release-name> novacaap/acute -f my-values.yaml
   ```
 
   ### Basic example values
@@ -115,7 +115,7 @@ install: |
 
   **Note**: This chart uses `nginx:1.25-alpine` as the default image. For production use, always specify a specific image tag instead of using `latest` to avoid security vulnerabilities.
 
-  For more configuration options, see the [values.yaml](https://github.com/kalpeshbpatel/helm-chart/blob/main/acute/values.yaml) file.
+  For more configuration options, see the [values.yaml](https://github.com/novacaap/helm-charts/blob/main/acute/values.yaml) file.
 
 changes:
   - kind: security
@@ -134,4 +134,4 @@ provider:
 
 annotations:
   artifacthub.io/category: integration-delivery
-  artifacthub.io/prerelease: "false"
+  artifacthub.io/prerelease: 'false'

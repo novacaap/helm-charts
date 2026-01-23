@@ -24,20 +24,20 @@ This Helm chart provides a standardized way to deploy containerized applications
 ### Add the Helm repository
 
 ```bash
-helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+helm repo add novacaap https://novacaap.github.io/helm-chart
 helm repo update
 ```
 
 ### Install the chart
 
 ```bash
-helm install acute kalpeshbpatel/acute
+helm install acute novacaap/acute
 ```
 
 ### Install with custom values
 
 ```bash
-helm install my-app kalpeshbpatel/acute -f my-values.yaml
+helm install my-app novacaap/acute -f my-values.yaml
 ```
 
 ## Configuration
@@ -309,13 +309,13 @@ containers:
 To upgrade the release:
 
 ```bash
-helm upgrade <release-name> kalpeshbpatel/acute
+helm upgrade <release-name> novacaap/acute
 ```
 
 Or with custom values:
 
 ```bash
-helm upgrade <release-name> kalpeshbpatel/acute -f my-values.yaml
+helm upgrade <release-name> novacaap/acute -f my-values.yaml
 ```
 
 ## Uninstalling
@@ -350,8 +350,8 @@ kubectl describe deployment <release-name>
 
 For issues, questions, or contributions, please refer to the repository's issue tracker:
 
-- **Repository**: [https://github.com/kalpeshbpatel/helm-chart](https://github.com/kalpeshbpatel/helm-chart)
-- **Issues**: [https://github.com/kalpeshbpatel/helm-chart/issues](https://github.com/kalpeshbpatel/helm-chart/issues)
+- **Repository**: [https://github.com/novacaap/helm-charts](https://github.com/novacaap/helm-charts)
+- **Issues**: [https://github.com/novacaap/helm-charts/issues](https://github.com/novacaap/helm-charts/issues)
 
 ## License
 
