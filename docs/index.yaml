@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  acute:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-01-23T14:20:04.841237+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 43f6a3b852f6478a7089baaa4a47197270e203915d6894f60c3031d7eb920b74
+    name: acute
+    type: application
+    urls:
+    - https://kalpeshbpatel.github.io/helm-chart/acute-1.0.0.tgz
+    version: 1.0.0
+generated: "2026-01-23T14:20:04.839749+05:30"

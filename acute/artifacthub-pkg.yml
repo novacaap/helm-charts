@@ -1,0 +1,137 @@
+# Artifact Hub package metadata file
+# Reference: https://raw.githubusercontent.com/artifacthub/hub/refs/heads/master/docs/metadata/artifacthub-pkg.yml
+
+version: 1.0.0
+name: acute
+displayName: Acute Helm Chart
+createdAt: "2026-01-23T00:00:00Z"
+description: A flexible and comprehensive Helm chart for deploying applications on Kubernetes. Supports multiple workload types including Deployments, StatefulSets, Jobs, and CronJobs with extensive configuration options for production-ready deployments.
+category: integration-delivery
+appVersion: "1.0.0"
+license: Apache-2.0
+homeURL: https://github.com/kalpeshbpatel/helm-chart
+containersImages:
+  - name: nginx
+    image: nginx:1.25-alpine
+    platforms:
+      - linux/amd64
+      - linux/arm64
+keywords:
+  - kubernetes
+  - helm
+  - deployment
+  - statefulset
+  - job
+  - cronjob
+  - integration-delivery
+  - devops
+  - container
+  - orchestration
+  - autoscaling
+  - hpa
+  - keda
+  - ingress
+  - configmap
+  - secret
+  - network-policy
+  - pod-disruption-budget
+
+maintainers:
+  - name: Kalpesh Patel
+    email: kalpesh.br.patel@gmail.com
+
+links:
+  - name: GitHub Repository
+    url: https://github.com/kalpeshbpatel/helm-chart
+  - name: Chart Documentation
+    url: https://github.com/kalpeshbpatel/helm-chart/tree/main/acute
+  - name: Issues
+    url: https://github.com/kalpeshbpatel/helm-chart/issues
+
+readme: |
+  # Acute Helm Chart
+
+  A flexible and comprehensive Helm chart for deploying applications on Kubernetes. This chart supports multiple workload types including Deployments, StatefulSets, Jobs, and CronJobs, with extensive configuration options for production-ready deployments.
+
+  ## Features
+
+  - **Multiple workload types**: Deployment, StatefulSet, Job, and CronJob
+  - **Auto-scaling**: Horizontal Pod Autoscaler (HPA) and KEDA ScaledObject
+  - **Networking**: Service, Ingress, and NetworkPolicy
+  - **Configuration management**: ConfigMap and Secret support
+  - **High availability**: PodDisruptionBudget and health probes
+  - **Security**: ServiceAccount, security contexts, and network policies
+
+  ## Quick Start
+
+  ```bash
+  helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+  helm repo update
+  helm install my-release kalpeshbpatel/acute
+  ```
+
+  For detailed documentation, see the [chart README](https://github.com/kalpeshbpatel/helm-chart/tree/main/acute).
+
+install: |
+  ## Installation
+
+  ### Add the Helm repository
+
+  ```bash
+  helm repo add kalpeshbpatel https://kalpeshbpatel.github.io/helm-chart
+  helm repo update
+  ```
+
+  ### Install the chart
+
+  ```bash
+  helm install <release-name> kalpeshbpatel/acute
+  ```
+
+  ### Install with custom values
+
+  ```bash
+  helm install <release-name> kalpeshbpatel/acute -f my-values.yaml
+  ```
+
+  ### Basic example values
+
+  ```yaml
+  kind: Deployment
+  replicaCount: 2
+  containers:
+    - name: nginx
+      image:
+        repository: nginx
+        tag: "1.25-alpine"
+      service:
+        enabled: true
+        type: ClusterIP
+        ports:
+          - name: http
+            port: 80
+            targetPort: 80
+  ```
+
+  **Note**: This chart uses `nginx:1.25-alpine` as the default image. For production use, always specify a specific image tag instead of using `latest` to avoid security vulnerabilities.
+
+  For more configuration options, see the [values.yaml](https://github.com/kalpeshbpatel/helm-chart/blob/main/acute/values.yaml) file.
+
+changes:
+  - kind: security
+    description: Updated default container image from nginx:latest to nginx:1.25-alpine for improved security and reduced vulnerabilities
+  - kind: added
+    description: Initial release of the Acute Helm chart with support for Deployments, StatefulSets, Jobs, and CronJobs
+  - kind: added
+    description: Added support for Horizontal Pod Autoscaler (HPA) and KEDA ScaledObject
+  - kind: added
+    description: Added comprehensive configuration options for Services, Ingress, ConfigMaps, and Secrets
+  - kind: added
+    description: Added security features including NetworkPolicy, PodDisruptionBudget, and ServiceAccount support
+
+provider:
+  name: Kalpesh Patel
+
+annotations:
+  artifacthub.io/category: integration-delivery
+  artifacthub.io/prerelease: "false"
