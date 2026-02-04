@@ -34,8 +34,12 @@ timeZone: 'UTC'
 ### Pod Setting
 
 ## Labels to be added to Deployment/StatefulSet
+## Optional labels.name and labels.version set app.kubernetes.io/name and app.kubernetes.io/version;
+## when not set, chart name and Chart.AppVersion are used.
 ##
 labels: {}
+  # name: myapp      # app.kubernetes.io/name
+  # version: "1.0.0" # app.kubernetes.io/version
 
 ## Annotations to be added to pods
 ##

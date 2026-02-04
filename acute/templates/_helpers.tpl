@@ -27,21 +27,24 @@ Create chart name and version as used by the chart label.
 
 {{/*
 Common labels
+Use values labels.name and labels.version when set; otherwise use chart name and Chart.AppVersion.
 */}}
 {{- define "chart.labels" -}}
 helm.sh/chart: {{ include "chart.chart" . }}
 {{ include "chart.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- $version := default .Chart.AppVersion (index .Values "labels" "version") }}
+{{- if $version }}
+app.kubernetes.io/version: {{ $version | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
 Selector labels
+Use values labels.name when set; otherwise use chart name.
 */}}
 {{- define "chart.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "chart.name" . }}
+app.kubernetes.io/name: {{ default (include "chart.name" .) (index .Values "labels" "name") }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
