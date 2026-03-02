@@ -41,6 +41,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       serviceAccountName: {{ include "chart.serviceAccountName" . }}
+      automountServiceAccountToken: {{ .Values.serviceAccount.automount | default true }}
       {{- with .Values.podSecurityContext }}
         securityContext:
           {{- toYaml . | nindent 8 }}
