@@ -15,8 +15,8 @@ This Helm chart provides a standardized way to deploy containerized applications
 
 ## Prerequisites
 
-- Kubernetes 1.19+
-- Helm 3.0+
+- Kubernetes 1.27+
+- Helm 4.x (this chart is Helm v4-only)
 - kubectl configured to access your Kubernetes cluster
 
 ## Installation
@@ -327,6 +327,13 @@ helm uninstall <release-name>
 ```
 
 ## Troubleshooting
+
+### Validate chart before install/upgrade
+
+```bash
+helm lint ./acute
+helm template my-release ./acute
+```
 
 ### Check deployment status
 

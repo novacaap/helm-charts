@@ -5,6 +5,8 @@ apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
   name: {{ $fullName }}
+  labels:
+    {{- $labels | nindent 4 }}
 spec:
   scaleTargetRef:
     name: {{ $fullName }}

@@ -1,7 +1,7 @@
 # Artifact Hub package metadata file
 # Reference: https://raw.githubusercontent.com/artifacthub/hub/refs/heads/master/docs/metadata/artifacthub-pkg.yml
 
-version: 1.0.0
+version: 1.1.0
 name: acute
 displayName: Acute Helm Chart
 createdAt: '2026-01-23T00:00:00Z'
@@ -52,6 +52,8 @@ readme: |
   # Acute Helm Chart
 
   A flexible and comprehensive Helm chart for deploying applications on Kubernetes. This chart supports multiple workload types including Deployments, StatefulSets, Jobs, and CronJobs, with extensive configuration options for production-ready deployments.
+
+  Helm support: Helm 4.x (v4-only chart baseline).
 
   ## Features
 
@@ -118,6 +120,8 @@ install: |
   For more configuration options, see the [values.yaml](https://github.com/novacaap/helm-charts/blob/main/acute/values.yaml) file.
 
 changes:
+  - kind: changed
+    description: Helm v4 standards refresh with stricter values schema validation and template guardrails
   - kind: security
     description: Updated default container image from nginx:latest to nginx:1.25-alpine for improved security and reduced vulnerabilities
   - kind: added
@@ -135,3 +139,4 @@ provider:
 annotations:
   artifacthub.io/category: integration-delivery
   artifacthub.io/prerelease: 'false'
+  artifacthub.io/containsSecurityUpdates: "true"

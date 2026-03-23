@@ -3,7 +3,32 @@ entries:
   acute:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-02-04T10:08:31.543979+05:30"
+    created: "2026-03-23T13:23:25.365018+05:30"
+    description: Flexible chart for deploying apps as Deployment, StatefulSet, Job,
+      or CronJob
+    digest: f5ab59aca6a94a2e6e00089fa1ed73ff9f487beeca464ea72cb1ce7e6b881d8e
+    home: https://github.com/novacaap/helm-charts
+    keywords:
+    - kubernetes
+    - helm
+    - deployment
+    - statefulset
+    - job
+    - cronjob
+    kubeVersion: '>=1.27.0-0'
+    maintainers:
+    - email: kalpesh.br.patel@gmail.com
+      name: Kalpesh Patel
+    name: acute
+    sources:
+    - https://github.com/novacaap/helm-charts
+    type: application
+    urls:
+    - https://novacaap.github.io/helm-charts/acute-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-03-23T13:23:25.364343+05:30"
     description: A Helm chart for Kubernetes
     digest: d34e2d9612da205b7140567e678b2ada25d3db3c9d95cf1d170257a711910269
     name: acute
@@ -13,7 +38,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-02-04T10:08:31.54333+05:30"
+    created: "2026-03-23T13:23:25.363171+05:30"
     description: A Helm chart for Kubernetes
     digest: 13ca258342651471c97a2cd0e7f6574ce49bed4df05349dce658e5e695eac9d8
     name: acute
@@ -21,4 +46,4 @@ entries:
     urls:
     - https://novacaap.github.io/helm-charts/acute-1.0.0.tgz
     version: 1.0.0
-generated: "2026-02-04T10:08:31.54222+05:30"
+generated: "2026-03-23T13:23:25.362036+05:30"

@@ -180,5 +180,4 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           restartPolicy: {{ .Values.restartPolicy | default "OnFailure" }}
-      backoffLimit: 5    
 {{- end }}

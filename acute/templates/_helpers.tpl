@@ -32,7 +32,8 @@ Use values labels.name and labels.version when set; otherwise use chart name and
 {{- define "chart.labels" -}}
 helm.sh/chart: {{ include "chart.chart" . }}
 {{ include "chart.selectorLabels" . }}
-{{- $version := default .Chart.AppVersion (index .Values "labels" "version") }}
+{{- $customLabels := default (dict) .Values.labels }}
+{{- $version := default .Chart.AppVersion (get $customLabels "version") }}
 {{- if $version }}
 app.kubernetes.io/version: {{ $version | quote }}
 {{- end }}
@@ -44,7 +45,8 @@ Selector labels
 Use values labels.name when set; otherwise use chart name.
 */}}
 {{- define "chart.selectorLabels" -}}
-app.kubernetes.io/name: {{ default (include "chart.name" .) (index .Values "labels" "name") }}
+{{- $customLabels := default (dict) .Values.labels }}
+app.kubernetes.io/name: {{ default (include "chart.name" .) (get $customLabels "name") }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
